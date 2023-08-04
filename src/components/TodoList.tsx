@@ -12,7 +12,6 @@ const TodoList: React.FC = () => {
         dispatch(fetchTodos());
     }, [dispatch]);
 
-    console.log(todos.todos.map((todo) => todo.title))
     return (
         <div className="w-full grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 mt-10 text-xl">
             {todos.todos.map((todo) => (
