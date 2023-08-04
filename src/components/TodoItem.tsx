@@ -6,7 +6,7 @@ import { BsXLg } from "react-icons/bs";
 interface TodoItemProps {
     todo: {
         id: number;
-        todo: string;
+        title?: string;
         completed: boolean;
     }
 }
@@ -14,7 +14,7 @@ const TodoItem = ({ todo }: TodoItemProps) => {
     const dispatch = useDispatch();
 
     return (
-        <div className="text-white flex items-center justify-between">
+        <div className="flex items-center justify-between">
             <div className="w-full flex items-center justify-between px-4 py-2 border border-slate-500 rounded hover:border-slate-300 transition ease-in-out">
                 <div className="flex items-center gap-1">
                     <input
@@ -28,7 +28,7 @@ const TodoItem = ({ todo }: TodoItemProps) => {
                         htmlFor={`${todo.id}`}
                         className="cursor-pointer peer-checked:line-through peer-checked:text-slate-500"
                     >
-                        {todo.todo}
+                        {todo.title}
                     </label>
                 </div>
 

@@ -11,7 +11,12 @@ const TodoForm: React.FC = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (inputValue.trim()) {
-            dispatch(addTodo(inputValue.trim()));
+            const newTodo = {
+                id: Date.now(),
+                title: inputValue.trim(),
+                completed: false
+            }
+            dispatch(addTodo(newTodo))
             setInputValue('');
         }
     };
